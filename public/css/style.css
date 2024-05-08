@@ -1,0 +1,195 @@
+body{
+   font-family: "Plus Jakarta Sans", sans-serif !important;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+/* Navbar style */
+.navbar{
+    height: 5rem;
+    background-color:white;
+}
+
+.fa-globe{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+  color:#222222 !important;
+  opacity: 0.7;
+
+}
+
+/*footer style*/
+
+.fa-brands{
+    color:#222222;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline ;
+}
+
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+
+.f-info-links, .f-info-socials,.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Card Style */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem !important;
+}
+
+.card-img-top {
+    border-radius: 1rem;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none !important;
+}
+
+.card-img-overlay{
+    opacity:0;
+}
+
+.card-img-overlay:hover{
+    opacity:0.3;
+    background-color: white;
+}
+
+/*Button styling*/
+.add-btn,.edit-btn,.delete-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/*Show Image*/
+.show-img{
+    height: 30vh;
+
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*filters styling*/
+#filters{
+    display: flex;              /* Align children inline */
+    flex-wrap: nowrap;        /* Prevent wrapping */
+    overflow-y:hidden;      /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+    scrollbar-width: thin;    /* Makes the scrollbar thin */
+    scrollbar-color: #888 #f1f1f1; /* Customizes the scrollbar color */
+   
+
+    
+}
+
+.filter a {
+    color:black;
+    text-decoration: none;
+    align-items: center;      /* Center the items vertically */
+    text-decoration: none;    /* Removes underline from links */
+    color: inherit;           /* Inherits text color */
+    padding: 5px 10px;        /* Padding around the text and icon */
+}
+
+.filter{
+    text-align: center;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    opacity: .7;
+    flex: 0 0 auto;           /* Don't grow, don't shrink, base size on content */
+    /*margin: 10px;              Optional: adds space between entries */
+    white-space: nowrap;      /* Ensure the text doesn't wrap within items */
+}
+
+.filter:hover{
+  opacity: 1;
+}
+
+.filter-anc p{
+    font-size: 0.8rem;
+}
+
+.filter i {
+    margin-right: 8px;        /* Space between icon and text */
+}
+
+.tax-info{
+    display: none;
+}
+
+.tax-toggle{
+    margin-top: .5rem;
+     border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.5rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    display:flex;
+    align-items: center;
+}
+
+.btn-search:hover{
+    background-color:#fe424d !important ;
+    color:white !important;
+}
+
+.btn-search i{
+    display: inline;
+    margin: 0.25rem;
+    border-radius: 35px;
+}
+
+#map 
+{ 
+    height: 400px;
+    width: 80vh;
+}

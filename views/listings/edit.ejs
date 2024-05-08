@@ -1,0 +1,70 @@
+
+<% layout('/layouts/boilerplate') -%>
+  <body>
+  <div class="row mt-3">
+    <div class="col col-8 offset-2">
+        <h3>Edit your Listing</h3>
+        <form method="POST" 
+             action="/listings/<%= listing._id %>?_method=PUT" 
+             enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="listing[title]" class="form-label">Title</label>
+            <input class="form-control"
+              name="listing[title]" value="<%= listing.title %>" type="text" />
+          </div>
+          <div class="mb-3">
+              <label for="listing[description]" class="form-label">Description</label>
+              <textarea class="form-control"
+              name="listing[description]" ><%= listing.description %></textarea>
+          </div>
+
+          <div class="mb-3">
+            original image<br/>
+              <img src="<%= originalUrl %>" alt="Listing image" style="height:250px;" >
+          </div>
+
+          <div class="mb-3">
+            <label for="listing[image]" class="form-label">Upload Listing Image</label>
+            <input name="listing[image]" type="file" class="form-control" />
+          </div>
+        <div class="row">  
+          <div class="col col-4 mb-3 ">
+            <label for="listing[price]" class="form-label">Pricing/night</label>
+            <input name="listing[price]" value="<%= listing.price %>"
+            type="number" class="form-control" />
+          </div>
+          <div class="col col-8 mb-3">
+            <label for="listing[country]" class="form-label">Country</label>
+          <input name="listing[country]" value="<%= listing.country %>" 
+          type="text" class="form-control"/>
+          </div>
+        </div>  
+        <div class="row"> 
+          <div class="col col-6  mb-3">
+            <label for="listing[location]" class="form-label">Location</label>
+            <input
+            name="listing[location]"
+            value="<%= listing.location %>"
+            type="text" class="form-control"/>
+          </div>
+          <div class="col col-6  mb-3">
+            <label for="listing[category]" class="form-label">Category</label>
+            <select class="form-select category " name="listing[category]"   >
+              <option selected ><%= listing.category %></option>
+              <option value="Beachfronts">Beachfronts</option>
+              <option value="Domes">Domes</option>
+              <option value="Mountains">Mountains</option>
+              <option value="Iconic City">Iconic City</option>
+              <option value="Camper Vans">Camper Vans</option>
+              <option value="Rooms">Rooms</option>
+              <option value="Ski-in">Ski-in</option>
+              <option value="Play">Play</option>
+              <option value="Houseboats">Houseboats</option>
+            </select>
+          </div>
+        </div>
+          <button class="btn btn-dark edit-btn mb-3">Edit</button>
+        </form>
+      </div>
+    </div>
+  </body>

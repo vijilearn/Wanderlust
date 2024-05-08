@@ -1,0 +1,70 @@
+
+  <div id="filters" >
+       <div class="filter" id="filter">
+         <a class="filter-anc" method="get" href="/category?name=Beachfronts" >
+          <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Beachfronts</p></a>
+       </div>
+        <div class="filter" id="filter">
+        <a class="filter-anc navbar-brand" method="get" href="/category?name=Domes"> 
+         <i class="fa-solid fa-landmark-dome"></i>
+         <p>Domes</p></a>
+      </div>
+      <div class="filter" id="filter">
+         <a class="filter-anc navbar-brand" method="get" href="/category?name=Mountains">
+         <i class="fa-solid fa-mountain"></i> 
+           <p>Mountains</p> </a>
+      </div>
+      <div class="filter" id="filter">
+       <a class="filter-anc navbar-brand" method="get" href="/category?name=Iconic City">
+           <i class="fa-solid fa-landmark-dome"></i>
+           <p>Iconic City</p> </a>
+      </div>
+      <div class="filter" id="filter">
+       <a class="filter-anc navbar-brand"  method="get" href="/category?name=Camper Vans">
+         <i class="fa-solid fa-caravan"></i>
+       <p>Camper Vans</p> </a>
+     </div>
+     <div class="filter" id="filter">
+       <a class="filter-anc navbar-brand"  method="get" href="/category?name=Rooms">
+         <i class="fa-solid fa-people-roof"></i>
+         <p>Rooms</p></a>
+     </div>
+     <div class="filter ">
+       <a class="filter-anc navbar-brand" method="get" href="/category?name=Ski-in">
+         <i class="fa-solid fa-person-skiing-nordic"></i>
+       <p>Ski-in</p></a>
+     </div>
+     <div class="filter" id="filter">
+      <a class="filter-anc navbar-brand" method="get" href="/category?name=Play">
+       <i class="fa-solid fa-otter"></i>
+      <p>Play</p></a> 
+     </div>
+     <div class="filter" id="filter">
+       <a class="filter-anc navbar-brand"  method="get" href="/category?name=Houseboats"><i class="fa-solid fa-ship"></i>
+       <p>Houseboats</p></a>
+     </div>
+     <div class="tax-toggle" id="filter">
+     <div class="form-check form-switch form-check-reverse">
+       <label class="form-check-label  navbar-collapse" 
+       for="flexSwitchCheckChecked">Display Total before Taxes </label>
+       <input class="form-check-input" 
+       type="checkbox" role="switch" 
+       id="flexSwitchCheckDefualt" >
+      </div>
+   </div>
+  </div>
+<script>
+  let taxSwitch = document.getElementById("flexSwitchCheckDefualt");
+  taxSwitch.addEventListener("click",() =>{
+  let taxInfo = document.getElementsByClassName("tax-info");
+  for(info of taxInfo){
+    if(info.style.display !="inline"){
+      info.style.display="inline";
+    }
+    else{
+      info.style.display="none";
+    }
+  }
+  })
+</script>

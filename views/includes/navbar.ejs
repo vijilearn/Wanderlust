@@ -1,0 +1,77 @@
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-globe"></i></a>
+       <button class="navbar-toggler" type="button" 
+         data-bs-toggle="collapse" 
+         data-bs-target="#navbarNavAltMarkup" >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+            
+         <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search" action="/country?name=name">
+              <select class="choice form-control form-select  me-2" 
+                name="name" placeholder="selected"
+                id="name" required >
+              <option selected >Search your Destination</option>
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="Italy">Italy</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="Fiji">Fiji</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Canada">Canada</option>  
+             <option value="Thailand">Thailand</option> 
+             <option value="United Arab Emirates">United Arab Emirates</option>
+             <option value="Greece">Greece</option>
+             <option value="Costa Rica">Costa Rica</option>
+             <option value="Japan">Japan</option>
+              <option value="Maldives">Maldives</option>
+              <option value="India">India</option>
+            </select>
+            <button class="btn btn-search" type="submit" id="btn">
+              <i class="fa-solid fa-magnifying-glass "></i>Search</button>
+          </form>
+         </div>
+        
+         <div class="btn-group ms-auto" on>
+          <div class="navbar-nav">
+          <a class="nav-link " href="/listings/new">YourhomeAirbnb</a>
+          </div>
+          <button type="button" class="btn btn-secondary dropdown-toggle" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="fa-solid fa-user"></i> </button>
+          <ul class="dropdown-menu dropdown-menu-end"> 
+            <% if(!currUser) { %>
+            <li><a class="dropdown-item" href="/signup">SignUp</a></li>
+            <li><a class="dropdown-item" href="/login">Login</a></li>
+              <% } %>
+              <% if(currUser) { %> 
+            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name'); // Get the 'name' query parameter
+
+        if (name) {
+            const selectElement = document.getElementById('name');
+            selectElement.value = name; // Set the select element to the retrieved value
+        }
+    });
+</script>
+  
