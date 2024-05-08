@@ -1,4 +1,8 @@
 {
+   "resolutions": {
+      "conflicting-package": "specific-version"
+    },
+
    "engines": {
       "node": "20.11.0"
    },
