@@ -57,7 +57,7 @@ const API_BASE_URL = process.env.API_BASE_URL; // 'https://your-service.onrender
 
 async function fetchItems() {
   try {
-    const response = await axios.get(`${API_BASE_URL}/items`);
+    const response = await axios.get(`${API_BASE_URL}/listings`);
     return response.data;
   } catch (error) {
     console.error('Error fetching items:', error);
