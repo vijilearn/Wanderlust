@@ -108,6 +108,10 @@ app.use((req,res,next) =>{
     next();
 })
 
+app.get(`/${API_BASE_URL}`,(req,res)=>{
+    res.redirect("/listings");
+})
+
 app.get("/privacy",(req,res)=>{
     res.render("../views/policies/privacy.ejs");
 })
