@@ -97,7 +97,7 @@ app.use((req,res,next) =>{
     next();
 })
 
-app.get(`${API_BASE_URL}`,async(req,res)=>{
+app.get("/wanderlust-a7b2.onrender.com",async(req,res)=>{
     try {
         const response = await axios.get(`${API_BASE_URL}/listings`);
         return res.redirect("/listings");
