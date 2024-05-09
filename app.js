@@ -47,6 +47,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methoOverride("_method"));
 app.use(express.static(Path.join(__dirname ,'/public')));
 app.use(cookieParser());
+const apiRouter = express.Router();
 app.use('/api', apiRouter);
 
 require('dotenv').config();
