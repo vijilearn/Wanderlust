@@ -55,17 +55,6 @@ const axios = require('axios');
 
 const API_BASE_URL = process.env.API_BASE_URL; // 'https://your-service.onrender.com/api'
 
-async function fetchItems() {
-  try {
-    const response = await axios.get(`${API_BASE_URL}/listings`);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching items:', error);
-    return null;
-  }
-}
-
-
 const store =  MongoStore.create({
   mongoUrl:dbUrl,
   crypto:{
@@ -108,8 +97,15 @@ app.use((req,res,next) =>{
     next();
 })
 
-app.get(`${API_BASE_URL}`,(req,res)=>{
-    res.redirect("/listings");
+app.get(`${API_BASE_URL}`,async(req,res)=>{
+    try {
+        const response = await axios.get(`${API_BASE_URL}/listings`);
+        return res.redirect("/listings");
+      } catch (error) {
+        req.flash("error","Listing not Exists!");
+        return res.render("error.ejs");
+      }
+    
 })
 
 app.get("/privacy",(req,res)=>{
