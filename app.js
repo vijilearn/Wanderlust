@@ -108,7 +108,7 @@ app.use((req,res,next) =>{
     next();
 })
 
-app.get(`/${API_BASE_URL}`,(req,res)=>{
+app.get(`${API_BASE_URL}`,(req,res)=>{
     res.redirect("/listings");
 })
 
