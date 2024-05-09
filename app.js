@@ -47,6 +47,23 @@ app.use(express.urlencoded({extended:true}));
 app.use(methoOverride("_method"));
 app.use(express.static(Path.join(__dirname ,'/public')));
 app.use(cookieParser());
+app.use('/api', apiRouter);
+
+require('dotenv').config();
+const axios = require('axios');
+
+const API_BASE_URL = process.env.API_BASE_URL; // 'https://your-service.onrender.com/api'
+
+async function fetchItems() {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/items`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching items:', error);
+    return null;
+  }
+}
+
 
 const store =  MongoStore.create({
   mongoUrl:dbUrl,
