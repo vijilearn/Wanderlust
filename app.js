@@ -97,7 +97,7 @@ app.use((req,res,next) =>{
     next();
 })
 
-app.get("/wanderlust-a7b2.onrender.com",async(req,res)=>{
+apiRouter.get('/', async(req, res) => {
     try {
         const response = await axios.get(`${API_BASE_URL}/listings`);
         return res.redirect("/listings");
@@ -105,8 +105,8 @@ app.get("/wanderlust-a7b2.onrender.com",async(req,res)=>{
         req.flash("error","Listing not Exists!");
         return res.render("error.ejs");
       }
-    
-})
+  });
+  
 
 app.get("/privacy",(req,res)=>{
     res.render("../views/policies/privacy.ejs");
