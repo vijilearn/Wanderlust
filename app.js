@@ -48,7 +48,7 @@ app.use(methoOverride("_method"));
 app.use(express.static(Path.join(__dirname ,'/public')));
 app.use(cookieParser());
 const apiRouter = express.Router();
-app.use('/api', apiRouter);
+app.use('/listings', apiRouter);
 
 require('dotenv').config();
 const axios = require('axios');
