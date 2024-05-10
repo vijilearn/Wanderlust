@@ -48,12 +48,8 @@ app.use(methoOverride("_method"));
 app.use(express.static(Path.join(__dirname ,'/public')));
 app.use(cookieParser());
 const apiRouter = express.Router();
-app.use('/listings', apiRouter);
 
 require('dotenv').config();
-const axios = require('axios');
-
-const API_BASE_URL = process.env.API_BASE_URL; // 'https://your-service.onrender.com/api'
 
 const store =  MongoStore.create({
   mongoUrl:dbUrl,
@@ -96,17 +92,6 @@ app.use((req,res,next) =>{
     res.locals.currUser = req.user;
     next();
 })
-
-apiRouter.get('/', async(req, res) => {
-    try {
-        const response = await axios.get(`${API_BASE_URL}/listings`);
-        return res.redirect("/listings");
-      } catch (error) {
-        req.flash("error","Listing not Exists!");
-        return res.render("error.ejs");
-      }
-  });
-  
 
 app.get("/privacy",(req,res)=>{
     res.render("../views/policies/privacy.ejs");
